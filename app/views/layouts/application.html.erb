@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ernandescelulares</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <div id="barra_de_logo">
+      <p class="logo"><%= image_tag "ernandes.jpg", :width => "250px", :height => "100px"%></p>
+    </div>
+
+    <input type="checkbox" id="bt_menu">
+    <label for="bt_menu">&#9776;</label>
+
+    <nav class="menus">
+      <ul>
+        <li><%= link_to 'Home', root_path %></li>
+        <li><a href="">Ordens de Serviço</a>
+          <ul>
+            <li><%= link_to "Nova O.S", new_service_path %></li>
+            <li><%= link_to "Ordens de Serviço", services_path %></li>
+            <li><%= link_to "Abertas", services_open_path, method: :get %></li>
+          </ul>
+        </li>
+        <li><a href="">Despesas</a>
+          <ul>
+            <li><a href="">Nova Despesa</a></li>
+            <li><a href="">Todas Despesas</a></li>
+          </ul>
+        </li>
+      </ul>
+
+    </nav>
+
+    <div class="primary-container">
+      <%= yield %>
+    </div>
+    
+  </body>
+</html>

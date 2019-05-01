@@ -1,0 +1,43 @@
+<div class="form-center">
+	<%= form_for @service do |f| %>
+
+		<div class="form-group">
+			<%= f.label :cliente %>
+			<%= f.text_field :client, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :telefone %>
+			<%= f.text_field :fone, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :endereco %>
+			<%= f.text_field :address, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :descricao %>
+			<%= f.text_area :description, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :valor %>
+			<%= f.text_field :value, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :previsao %>
+			<%= f.text_field :delivery, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :status %><br>
+			<%= f.select :status, ['Aberta', 'Concluída'], class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.submit :salvar, class: "btn btn-success" %>
+		</div>
+	<% end %>
+</div>

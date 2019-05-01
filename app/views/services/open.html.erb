@@ -1,0 +1,11 @@
+<% if flash[:notice] %>
+	<div class="alert alert-info" role="alert">
+	  	<%= flash[:notice] %>
+	</div>
+<% end %>
+
+<div class="label">
+	<h2>O.S Abertas</h2>
+</div>
+
+<%= render "services" %>

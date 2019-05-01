@@ -1,0 +1,62 @@
+<% if flash[:notice] %>
+	<div class="alert alert-info" role="alert">
+		<%= flash[:notice]%>
+	</div>
+<% end %>
+
+<div class="label">
+	<h2>Ordem de Serviço Nº <%= @service.id%></h2>
+</div>
+
+<div class="options">
+	<%= link_to 'Voltar', services_open_path, class: "btn btn-default" %>
+	<%= link_to "Editar", edit_service_path(@service), class: "btn btn-warning" %>
+	<%= link_to 'Excluir', @service, method: :delete, class: "btn btn-danger", data:{confirm: "Deseja excluir a O.S Nº #{@service.id}"} %>
+	<%= link_to "Finalizar", finish_service_path(@service), data:{confirm: "Deseja Finalizar a ordem de serviço nº #{@service.id}"}, class: "btn btn-success" %>
+</div>
+
+<div class="form-center">
+	<%= form_for @service do |f| %>
+
+		<div class="form-group">
+			<%= f.label :ordem %>
+			<%= f.text_field :id, class: "form-control", :disabled=>true %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :cliente %>
+			<%= f.text_field :client, class: "form-control", :disabled=>true %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :telefone %>
+			<%= f.text_field :fone, class: "form-control", :disabled=>true %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :endereco %>
+			<%= f.text_field :address, class: "form-control", :disabled=>true %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :descricao %>
+			<%= f.text_area :description, class: "form-control", :disabled=>true %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :valor %>
+			<%= f.text_field :value, class: "form-control", :disabled=>true %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :previsao %>
+			<%= f.text_field :delivery, class: "form-control", :disabled=>true %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :status %><br>
+			<%= f.text_field :status, class: "form-control", :disabled=>true %>
+		</div>
+
+	<% end %>
+</div>

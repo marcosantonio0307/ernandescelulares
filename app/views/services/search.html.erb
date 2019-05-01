@@ -1,0 +1,20 @@
+<% if flash[:notice] %>
+	<div class="alert alert-info" role="alert">
+	  	<%= flash[:notice] %>
+	</div>
+<% end %>
+
+<div class="label">
+	<h2>O.S Abertas</h2>
+</div>
+
+<%= form_tag services_search_path, method: :get, class: "navbar-form navbar-right" do %>
+	<div class="form-group">
+		<%= link_to 'Voltar', services_open_path, class: "btn btn-default" %> 
+		<%= text_field_tag :client, @client, class: "form-control" %>
+		<%= button_to 'Buscar', nil, class: "btn btn-success" %>
+	</div>
+<% end %>
+
+<%= render "services" %>
+
