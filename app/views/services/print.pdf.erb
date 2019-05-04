@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%= wicked_pdf_stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<title>Ordem de serviço</title>
+		<meta charset="utf-8">
+	</head>
+	<body style="background: white;">
+
+		<div class="container-primary">
+
+			<p style="margin-left: 6em; margin-bottom: 3em;"><%= wicked_pdf_image_tag 'ernandes.jpg', :width => "250px", :height => "100px"%><p>
+		
+			<h2 align="center">Ordem de Serviço Nº <%= @service.id%></h2>
+
+			<div class="container-secundary">
+				<div class="line">
+					<label>Data:</label>
+					<span><%= @service.created_at.strftime("%d/%m/%Y") %></span>
+				</div>
+
+				<div class="line">
+					<label>Cliente:</label>
+					<span><%= @service.client %></span>
+				</div>
+
+				<div class="line">
+					<label>Telefone:</label>
+					<span><%= @service.fone %></span>
+				</div>
+
+				<div class="line">
+					<label>Endereço:</label>
+					<span><%= @service.address %></span>
+				</div>
+
+				<div class="line">
+					<label>Descrição:</label><br>
+					<p><%= @service.description %></p>
+				</div>
+
+				<div class="line">
+					<label>Valor:</label>
+					<span>R<%= number_to_currency @service.value %></span>
+				</div>
+
+				<div class="line">
+					<label>Cliente:</label>
+					<span><%= @service.client %></span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

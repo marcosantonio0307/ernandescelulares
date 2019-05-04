@@ -8,6 +8,10 @@
 	<h2>Ordem de Serviço Nº <%= @service.id%></h2>
 </div>
 
+<div style="float: left; margin-left: 5em;">
+	<%= link_to(image_tag("imprimir.png", :width => "50px", :height => '50px'), "#{@service.id}.pdf") %>
+</div>
+
 <div class="options">
 	<%= link_to 'Voltar', services_open_path, class: "btn btn-default" %>
 	<%= link_to "Editar", edit_service_path(@service), class: "btn btn-warning" %>
