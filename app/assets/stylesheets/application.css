@@ -140,6 +140,38 @@ label[for="bt_menu"] {
 
 /* --------------------------------- */
 
+/* PDF */
+
+.container-secundary {
+	border: solid 1px;
+	width: 80%;
+	margin: 1em auto;
+}
+
+.line {
+	margin: 0.8em 0.2em;
+	font-size: 1.1em;
+
+}
+
+.line label {
+	margin-left: 3em;
+	font-weight: bold;
+}
+
+.line p {
+	margin-left: 3em;	
+	font-size: 1em;
+	width: 70%;
+	border: solid 1px;
+	padding: 0.1em 0.5em;
+	margin-top: 0.2em;
+	min-height: 50px;
+}
+
+/* -------------------------------*/
+
+
 #barra_de_logo {
 	width: 60%;
 	height: 100px;
